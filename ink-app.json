@@ -1,0 +1,85 @@
+{
+  "slug": "links",
+  "title": "Links",
+  "repository": "https://github.com/siliconjungle/ink-app-links",
+  "directory": "dist",
+  "entry": "index.html",
+  "backend": {
+    "entry": "server.mjs",
+    "idleSafe": true
+  },
+  "desktop": {
+    "entry": "links",
+    "context": "self",
+    "icon": "./icon.svg",
+    "dock": false,
+    "window": {
+      "width": 980,
+      "height": 760
+    }
+  },
+  "capabilities": [
+    "world.read",
+    "desktop.open"
+  ],
+  "commands": [
+    {
+      "id": "list",
+      "title": "Show saved links",
+      "description": "Show saved links.",
+      "inputs": [],
+      "handler": {
+        "type": "backend",
+        "path": "/session",
+        "method": "POST"
+      },
+      "result": {
+        "items": "library.links",
+        "title": "title",
+        "subtitle": "url"
+      },
+      "effect": "read",
+      "idempotent": true,
+      "outputs": [
+        {
+          "label": "Saved links",
+          "path": "library.links",
+          "type": "json"
+        }
+      ]
+    },
+    {
+      "id": "save",
+      "title": "Save a link",
+      "description": "Add a URL to the shared link library.",
+      "inputs": [
+        {
+          "name": "url",
+          "label": "URL",
+          "type": "url",
+          "required": true
+        }
+      ],
+      "handler": {
+        "type": "open"
+      }
+    },
+    {
+      "id": "search",
+      "title": "Find a saved link",
+      "description": "Search the shared link library.",
+      "inputs": [
+        {
+          "name": "q",
+          "label": "Search",
+          "type": "text",
+          "required": false
+        }
+      ],
+      "handler": {
+        "type": "open"
+      }
+    }
+  ],
+  "commandsClient": "commands.mjs"
+}

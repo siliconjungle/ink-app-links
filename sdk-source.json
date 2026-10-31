@@ -1,0 +1,66 @@
+{
+  "baselineCommit": "1e8e82766400658e2c3ba789719cdeb7255bc686",
+  "files": [
+    {
+      "source": "src/browser.js",
+      "path": "public/sdk/browser.js",
+      "sha256": "6ffe351082808e164fd8035b7de2b48c1abbf1f14e32ea08c3a46abfaddd0926"
+    },
+    {
+      "source": "src/gestures.js",
+      "path": "public/sdk/gestures.js",
+      "sha256": "8c5ca686dc0917069a41233cf3dd3b8a2130ea0cbeb0a8b971372609e26b1c15"
+    },
+    {
+      "source": "src/desktop-keys.js",
+      "path": "public/sdk/desktop-keys.js",
+      "sha256": "22a9977622fc66bd6423a8267c49c4a88480387b2654b5fff3c7b336a67ba102"
+    },
+    {
+      "source": "src/live-query.js",
+      "path": "public/sdk/live-query.js",
+      "sha256": "bff9ae3322c41de933ae6e466b3189909aaf4e455a82b4056f03e5c9ab16c88a"
+    },
+    {
+      "source": "styles/tokens.css",
+      "path": "public/styles/tokens.css",
+      "sha256": "9c46bb30d14123813e9ceded7db37269dc6cffb9c4ea9088a140227632c01085"
+    },
+    {
+      "source": "styles/font.css",
+      "path": "public/styles/font.css",
+      "sha256": "cff86e1cf2ccabc79e230e2b8c9da4a673e95379d4f58404008e77f7bee4e6a2"
+    },
+    {
+      "source": "styles/base.css",
+      "path": "public/styles/base.css",
+      "sha256": "872e9342ca768801003fa7afb31792b2586f39abdfddb7e08bb54092b7f77d86"
+    },
+    {
+      "source": "styles/components.css",
+      "path": "public/styles/components.css",
+      "sha256": "ad3b490c0f6c402b6317b0bc383152e70f4ba2996a7664062e3c31b8ae8fe32a"
+    },
+    {
+      "source": "styles/ink.css",
+      "path": "public/styles/ink.css",
+      "sha256": "7e5dfa78ee66788452ab30199fef5ce154b3679294eb36f0d8e202266654973e"
+    },
+    {
+      "source": "styles/fonts/inter-latin-wght-normal.woff2",
+      "path": "public/styles/fonts/inter-latin-wght-normal.woff2",
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    {
+      "source": "styles/fonts/OFL.txt",
+      "path": "public/styles/fonts/OFL.txt",
+      "sha256": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345"
+    },
+    {
+      "source": "src/context-menu.js",
+      "path": "public/sdk/context-menu.js",
+      "sha256": "e2957827be1dc5bfe678a1bad0f540566738aef796ff2ffaf33fb54ce2761f3e"
+    }
+  ],
+  "distribution": "Bundled Ink OS SDK assets"
+}

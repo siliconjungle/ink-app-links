@@ -1,0 +1,9 @@
+export const KEY='saved-links';
+export const fail=(message,status=400)=>Object.assign(Error(message),{status});
+export const newLibrary=()=>({schema:1,version:0,links:[]});
+export function normalizeURL(value){if(typeof value!=='string'||!value.trim()||value.length>4096)throw fail('Paste a website address.');let text=value.trim();if(!/^[a-z][a-z\d+.-]*:/i.test(text))text='https://'+text;let url;try{url=new URL(text);}catch{throw fail('Enter a valid website address.');}if(!['http:','https:'].includes(url.protocol)||!url.hostname||url.username||url.password)throw fail('Use an http or https link without a password.');return url.href;}
+export function domain(value){try{return new URL(value).hostname.replace(/^www\./,'');}catch{return '';}}
+export function activeLinks(library){return (library?.links||[]).filter(link=>!link.deletedAt);}
+export function requireID(value){if(typeof value!=='string'||! /^[a-f0-9]{32}$/.test(value))throw fail('Invalid link identity.');return value;}
+export function moveLink(library,id,beforeId){const index=library.links.findIndex(link=>link.id===id&&!link.deletedAt);if(index<0)throw fail('This link was deleted.',404);if(beforeId===id)return false;if(beforeId!==null&&!library.links.some(link=>link.id===beforeId&&!link.deletedAt))throw fail('The destination has changed. Try again.',409);const before=activeLinks(library).map(link=>link.id).join(','),[link]=library.links.splice(index,1),target=beforeId===null?library.links.length:library.links.findIndex(item=>item.id===beforeId);library.links.splice(target,0,link);return before!==activeLinks(library).map(link=>link.id).join(',');}
+export function compactTrash(library){const deleted=library.links.filter(link=>link.deletedAt).sort((a,b)=>b.deletedAt-a.deletedAt),keep=new Set(deleted.slice(0,50).map(link=>link.id));library.links=library.links.filter(link=>!link.deletedAt||keep.has(link.id));return library;}
