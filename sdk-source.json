@@ -14,7 +14,7 @@
     {
       "source": "src/desktop-keys.js",
       "path": "public/sdk/desktop-keys.js",
-      "sha256": "22a9977622fc66bd6423a8267c49c4a88480387b2654b5fff3c7b336a67ba102"
+      "sha256": "415926ac37fd9f3e193061d1f310d34113141941cf6f0bfd3ff6ce51152c79c0"
     },
     {
       "source": "src/live-query.js",
@@ -62,5 +62,12 @@
       "sha256": "e2957827be1dc5bfe678a1bad0f540566738aef796ff2ffaf33fb54ce2761f3e"
     }
   ],
-  "distribution": "Bundled Ink OS SDK assets"
+  "distribution": "Bundled Ink OS SDK assets",
+  "quickLookUpdate": {
+    "repository": "https://github.com/siliconjungle/ink-os-platform",
+    "commit": "8b325465416b972c1d968d8b74102732a25578d8",
+    "files": [
+      "public/sdk/desktop-keys.js"
+    ]
+  }
 }
